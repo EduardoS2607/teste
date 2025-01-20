@@ -1,0 +1,358 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9e5e5; /* Cor de fundo suave e romântica */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 15px; /* Borda arredondada para dar suavidade */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .start-screen h1{
+    font-size: 32px;
+    color: #ff4c4c; /* Cor vermelha para dar um toque de amor */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .start-screen h1 span {
+    font-size: 24px;
+    color: #f9a5a5; /* Tom de rosa suave */
+  }
+  
+  .start-screen h5{
+    font-size: 32px;
+    color: #ff4c4c; /* Cor vermelha para dar um toque de amor */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .start-screen h3 span {
+    font-size: 24px;
+    color: #f9a5a5; /* Tom de rosa suave */
+  }
+  .countdown {
+    font-size: 24px;
+    color: #ff4c4c;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .start-btn {
+    padding: 15px 30px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px; /* Bordas arredondadas no botão */
+    font-size: 18px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .start-btn:hover {
+    background-color: #ff3a3a;
+  }
+  
+  .start-btn:active {
+    background-color: #e02b2b;
+  }
+  
+  button {
+    padding: 12px 25px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin: 0.6em;
+  }
+  
+  button:hover {
+    background-color: #ff3a3a;
+  }
+  
+  button:active {
+    background-color: #e02b2b;
+  }
+  
+  button:disabled {
+    background-color: #d8d8d8;
+    cursor: not-allowed;
+  }
+  
+  #countdown {
+    font-size: 20px;
+    color: #ff4c4c;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  #countdown {
+    margin-bottom: 25px;
+  }
+  
+  #answer-images img {
+    margin: 0.4em;
+    max-width: 45%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  #answer-screen, #question-screen, #result-screen {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ajustes para a tela de perguntas */
+  #question-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #question-text {
+    font-size: 24px;
+    color: #ff4c4c;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  #answers {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .answer-option {
+    padding: 15px;
+    margin: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px; /* Borda arredondada */
+    cursor: pointer;
+    width: 80%;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answer-option:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .answer-option.selected {
+    background-color: #a0c4ff; /* Azul claro */
+  }
+  
+  .correct {
+    background-color: #4CAF50; /* Verde */
+  }
+  
+  #final-question-screen button {
+    margin-top: 20px;
+  }
+  
+  #answer-screen, #question-screen, #result-screen {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  #answer-text {
+    font-size: larger;
+    font-family: cursive;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0.6em;
+  }
+
+  #answer-media {
+    display: flex; /* Para alinhar os itens */
+    flex-wrap: wrap; /* Permite que os itens ocupem várias linhas */
+    justify-content: center; /* Centralizar o conteúdo */
+    gap: 10px; /* Espaço entre os itens */
+    margin-top: 20px; /* Espaço acima */
+}
+
+#answer-media img,
+#answer-media video {
+    max-width: 100%; /* Imagens e vídeos nunca devem ultrapassar o container */
+    max-height: 200px; /* Limite de altura */
+    border-radius: 8px; /* Bordas arredondadas */
+    object-fit: cover; /* Imagens/vídeos mantêm proporções */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras para melhorar o design */
+}
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000; /* Ficar acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo expandido */
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+/* Botão de fechar */
+#close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result-container {
+  background-color: #fef6f6;  /* Um fundo suave para a tela de resultados */
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+h2 {
+  color: #ff4c4c;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 28px;
+}
+
+.message {
+  color: #ff4c4c;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.reminder {
+  color: #f9a5a5;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #ff3a3a;
+}
+
+button:active {
+  background-color: #e02b2b;
+}
+.result-container {
+  background-color: #fef6f6;  /* Fundo suave */
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+h2 {
+  color: #ff4c4c;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 28px;
+}
+
+.message {
+  color: #ff4c4c;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.reminder {
+  color: #f9a5a5;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #ff3a3a;
+}
+
+button:active {
+  background-color: #e02b2b;
+}
+
+/* Estilo para a imagem */
+.image-container {
+  margin-top: 20px;
+  padding: 5px;
+  border: 2px solid #ff4c4c; /* Cor da borda */
+  border-radius: 8px;
+  max-width: 100%;
+  overflow: hidden; /* Impede que a imagem saia do contorno */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ajusta a imagem para preencher o container */
+}
