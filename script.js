@@ -37,7 +37,7 @@ const questions = [
     answer: 0,  // Resposta correta é "Titanic"
     answerText: "Mais uma inesquecível pra conta, teve pedido de casamento, rolê de lancha, viagem com a familia e tantos mais kkk",
     images: ["img/capitolio1.jpg", "img/capitolio2.jpg", "img/capitolio3.jpg", "img/capitolio4.jpg", "img/capitolio5.jpg"], 
-    videos: ["img/capitolio6.mp4"] // Exemplo de imagens
+    videos: [] // Exemplo de imagens
 },
 {
     question: "Nossa primeira viagem no Nordeste ?",
@@ -45,7 +45,7 @@ const questions = [
     answer: 1,  // Resposta correta é "Titanic"
     answerText: "Paramos em Recife primeiro e seguimos por todo litoral... Maragogi, São Miguel dos Milagres, Maceió. Ohhh Maravilha!!!",
     images: ["img/maceio7.jpg", "img/maceio6.jpg", "img/maceio4.jpg", "img/maceio3.jpg", "img/maceio2.jpg"], 
-    videos: ["img/maceio1.mp4"] // Exemplo de imagens
+    videos: [] // Exemplo de imagens
 },
 {
     question: "Quando falamos viagem em grupo, lembramos de?",
@@ -53,7 +53,23 @@ const questions = [
     answer: 2,  // Resposta correta é "Titanic"
     answerText: "Estava facil né, café da manhã, almoço e janta na mesa juntinhos, role de lancha, JetSky, cachaça na piscina, foi tanta coisa kkkk",
     images: ["img/angra6.jpg", "img/angra2.jpg", "img/angra3.jpg", "img/angra4.jpg", "img/angra5.jpg"], 
-    videos: ["img/angra1.mp4"] // Exemplo de imagens
+    videos: [] // Exemplo de imagens
+},
+{
+    question: "Andamos de Mustang conversivel, onde foi?",
+    options: ["Porto Alegre", "Floripa", "Gramado", "Canela"],
+    answer: 2,  // Resposta correta é "Titanic"
+    answerText: "Foi até dificil lembrar só de uma coisa dessa viagem, está em nosso radar ir pra lá novamente",
+    images: ["img/gramado1.jpg", "img/gramado2.jpg", "img/gramado3.jpg", "img/gramado4.jpg"], 
+    videos: [] // Exemplo de imagens
+},
+{
+    question: "Aqui escolhemos ser Dublê de rico e ficar no hotel do Presidente?",
+    options: ["Palmas", "Brasilia", "Goiânia", "Caldas novas"],
+    answer: 1,  // Resposta correta é "Titanic"
+    answerText: "Hotel 5 estrelas, Bolsonaro e HotPark talvez é tudo que eu lembre dessa viagem kkkk",
+    images: ["img/brasilia1.jpg", "img/brasilia2.jpg", "img/brasilia3.jpg", "img/brasilia4.jpg"], 
+    videos: [] // Exemplo de imagens
 },
 // Mais perguntas...
 {
@@ -275,7 +291,7 @@ function updateCountdown() {
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").innerText = 
-        `Contagem regressiva: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        `O Grande dia -+: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
     setTimeout(updateCountdown, 1000); // Atualiza a contagem a cada 1 segundo
 }
