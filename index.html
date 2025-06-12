@@ -5,10 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Amor</title>
     <style>
-       
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            position: relative;
+        }
+        h1 {
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            font-size: 2.5rem;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h1::after {
+            content: "❤️";
+            font-size: 2rem;
+        }
+        .slider {
+            width: 80%;
+            height: 55vh;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background: white;
+            padding: 10px;
+        }
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide img {
+            width: 90%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .arrow {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: auto;
+        }
+        h2 {
+            color: white;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+        #contador {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
+            opacity: 0.7;
+            animation: float 5s linear infinite;
+        }
+        
+        .text {
+            font-size: 1.1rem;
+            color: white;
+            width: 70%;
+            margin-top: 20px;
+            line-height: 1.8;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
-    <h1>EAE</h1>
+    <h1>Eu te amo</h1>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="img1.jpg" alt="Foto 1"></div>
+            <div class="slide"><img src="img2.jpg" alt="img 2"></div>
+            <div class="slide"><img src="img3.jpg" alt="img 3"></div>
+            <div class="slide"><img src="img4.jpg" alt="img 4"></div>
+            <div class="slide"><img src="img5.jpg" alt="img 5"></div>
+            <div class="slide"><img src="img6.jpg" alt="img 6"></div>
+            <div class="slide"><img src="img7.jpg" alt="img 7"></div>
+            <div class="slide"><img src="img8.jpg" alt="img 8"></div>
+            <div class="slide"><img src="img9.jpg" alt="img 9"></div>
+            <div class="slide"><img src="img10.jpg" alt="Foto 10"></div>
+            <div class="slide"><img src="img11.jpg" alt="Foto 10"></div>
+            <div class="slide"><img src="img12.jpg" alt="Foto 10"></div>
+        </div>
+        <div class="arrows">
+            <button class="arrow" onclick="prevSlide()">⬅️</button>
+            <button class="arrow" onclick="nextSlide()">➡️</button>
+        </div>
+    </div>
+    <h2>Juntos</h2>
+    <div id="contador"></div>
+    <div class="text">
+        Gata, esse é um dos presentes românticos que um garoto de programa pode oferecer. Só pra lembrar que EU TE AMO MUITO,visite esse site pra lembrar e agradecer o quanto passamos juntos e que o contador não pare de Subir. Que Papai do Céu nos abençoe.
+    </div>
+    <div class="hearts"></div>
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            const slides = document.querySelector('.slides');
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % 10;
+            showSlides();
+        }
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + 10) % 10;
+            showSlides();
+        }
+        setInterval(nextSlide, 3000);
+
+        function updateCounter() {
+            const startDate = new Date(2016, 2, 4);
+            const today = new Date();
+            let years = today.getFullYear() - startDate.getFullYear();
+            let months = today.getMonth() - startDate.getMonth();
+            let days = today.getDate() - startDate.getDate();
+            if (days < 0) {
+                months--;
+                days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+            }
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            document.getElementById('contador').innerText = `${years} anos, ${months} meses e ${days} dias`;
+        }
+        updateCounter();
+    </script>
+    <iframe width="360" height="215" src="https://www.youtube.com/embed/Fzmvv8fSyQs?si=m5Ar0g9vcZn9Di4c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
 </html>
